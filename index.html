@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guillaume Pien — Data &amp; Analytics Portfolio</title>
+<meta name="description" content="PharmD turned data professional. Power BI, SQL, Python, generative AI — 10+ years of pharma expertise applied to analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1B2B;
+    --ink-2:#16273D;
+    --paper:#F5F3ED;
+    --panel:#FFFFFF;
+    --blue:#2B6E8F;
+    --blue-soft:#DCE9EE;
+    --amber:#D89238;
+    --teal:#4B8C82;
+    --text:#151C24;
+    --text-soft:#57626E;
+    --line:rgba(15,27,43,0.12);
+    --line-dark:rgba(245,243,237,0.16);
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{ font-family:'IBM Plex Mono',monospace; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  section{ padding:96px 0; }
+  @media (max-width:720px){ section{ padding:64px 0; } .wrap{ padding:0 20px; } }
+
+  ::selection{ background:var(--amber); color:var(--ink); }
+  :focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,243,237,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600; font-size:14px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--amber);
+    animation:blink 2.4s ease-in-out infinite;
+  }
+  @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+  nav.links{ display:flex; gap:28px; }
+  nav.links a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px; text-transform:uppercase; letter-spacing:0.08em;
+    text-decoration:none; color:var(--text-soft);
+    padding-bottom:2px; border-bottom:1px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  nav.links a:hover{ color:var(--ink); border-color:var(--amber); }
+  @media (max-width:640px){ nav.links{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:#F2F1EC;
+    padding:88px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--amber);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:var(--amber); display:inline-block; }
+
+  .hero h1{
+    font-size:clamp(32px,4.2vw,52px);
+    line-height:1.12;
+    font-weight:600;
+    color:#F7F6F1;
+  }
+  .hero h1 em{
+    font-style:normal; color:var(--amber);
+  }
+  .hero p.lede{
+    margin-top:22px; max-width:540px;
+    font-size:17px; color:#C7CBD3;
+  }
+  .hero-cta{ margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 20px; border-radius:9px;
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.02em;
+    text-decoration:none; transition:transform .15s ease, background .2s ease, border-color .2s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--amber); color:var(--ink); font-weight:600; }
+  .btn-primary:hover{ background:#E8A64A; }
+  .btn-ghost{ border-color:var(--line-dark); color:#EDEBE4; }
+  .btn-ghost:hover{ border-color:#F2F1EC; }
+
+  /* Signature element: dashboard tile */
+  .kpi-card{
+    background:var(--ink-2);
+    border:1px solid var(--line-dark);
+    border-radius:var(--radius);
+    padding:22px 24px 24px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+    opacity:0; transform:translateY(14px);
+    animation:riseIn .7s ease forwards .15s;
+  }
+  @keyframes riseIn{ to{ opacity:1; transform:none; } }
+  .kpi-card-head{
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#8892A0; margin-bottom:18px; padding-bottom:12px; border-bottom:1px solid var(--line-dark);
+  }
+  .kpi-card-head span.filter{ color:var(--teal); }
+  .kpi-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .kpi{ }
+  .kpi .num{
+    font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; color:#F7F6F1;
+    display:flex; align-items:baseline; gap:6px;
+  }
+  .kpi .delta{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500;
+  }
+  .delta.up{ color:#7FC49A; }
+  .delta.flat{ color:var(--amber); }
+  .kpi .label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8892A0; margin-top:4px; letter-spacing:0.02em;
+  }
+  .spark{ margin-top:8px; display:block; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:0.36fr 0.64fr; gap:56px; align-items:start;
+  }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:28px; } }
+  .measure-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--blue);
+    background:var(--blue-soft); display:inline-block; padding:10px 14px; border-radius:8px;
+    line-height:1.5; white-space:pre-wrap; word-break:break-word;
+  }
+  .section-eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--blue); margin-bottom:14px; display:block;
+  }
+  h2.section-title{ font-size:clamp(24px,3vw,34px); margin-bottom:8px; }
+  .about-grid p{ color:var(--text-soft); font-size:16px; margin:0 0 16px; }
+  .about-grid p:last-child{ margin-bottom:0; }
+  .about-grid strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- SKILLS ---------- */
+  .skills-wrap{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:40px 0; }
+  .skills-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+  .skills-row + .skills-row{ margin-top:22px; }
+  .skill-group-label{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--text-soft); width:100%; margin-bottom:2px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px;
+    padding:7px 13px; border-radius:100px; border:1px solid var(--line);
+    background:var(--panel); color:var(--text); transition:border-color .2s, transform .15s;
+  }
+  .chip:hover{ border-color:var(--blue); transform:translateY(-1px); }
+
+  /* ---------- PROJECTS ---------- */
+  .projects-head{ margin-bottom:48px; }
+  .project-grid{ display:grid; grid-template-columns:1fr; gap:28px; }
+
+  .tile{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .tile:hover{ box-shadow:0 24px 48px -28px rgba(15,27,43,0.28); transform:translateY(-3px); }
+
+  .tile-tab{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:16px 24px; background:var(--ink); color:#F2F1EC;
+    flex-wrap:wrap;
+  }
+  .tile-tab .tab-left{ display:flex; align-items:center; gap:12px; }
+  .tile-num{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber); border:1px solid var(--line-dark);
+    padding:3px 8px; border-radius:6px;
+  }
+  .tile-tab h3{ font-size:19px; color:#F7F6F1; font-weight:600; }
+  .tile-tab .badge{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
+    background:var(--amber); padding:4px 10px; border-radius:100px; font-weight:600; white-space:nowrap;
+  }
+
+  .tile-body{ padding:24px; }
+  .tile-body img.shot{
+    width:100%; border-radius:9px; border:1px solid var(--line); margin-bottom:18px; display:block;
+  }
+  .tile-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+  .tile-tags .chip{ font-size:11.5px; padding:5px 11px; }
+  .tile-body p{ color:var(--text-soft); margin:0 0 14px; }
+  .tile-body p:last-of-type{ margin-bottom:0; }
+
+  .stat-row{ display:flex; flex-wrap:wrap; gap:22px; margin:18px 0; padding:16px 0; border-top:1px dashed var(--line); border-bottom:1px dashed var(--line); }
+  .stat{ min-width:120px; }
+  .stat .num{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; color:var(--blue); }
+  .stat .label{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-soft); margin-top:2px; }
+
+  .tile-link{
+    display:inline-flex; align-items:center; gap:8px; margin-top:6px;
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--blue); text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .tile-link:hover{ border-color:var(--blue); }
+  .tile-link .arrow{ transition:transform .2s; }
+  .tile-link:hover .arrow{ transform:translateX(3px); }
+
+  details.modules{ margin-top:10px; }
+  details.modules summary{
+    cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--teal);
+    list-style:none; display:flex; align-items:center; gap:6px;
+  }
+  details.modules summary::-webkit-details-marker{ display:none; }
+  details.modules summary::before{ content:'▸'; transition:transform .2s; }
+  details.modules[open] summary::before{ transform:rotate(90deg); }
+  details.modules .mod{ padding:14px 0 4px 16px; border-left:2px solid var(--line); margin:10px 0 0 4px; }
+  details.modules .mod h4{ font-family:'Inter',sans-serif; font-size:14.5px; font-weight:600; margin-bottom:5px; }
+  details.modules .mod p{ font-size:14.5px; margin-bottom:14px; }
+
+  /* ---------- APPROACH (sequence — order genuinely matters) ---------- */
+  .approach-list{ display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:44px; position:relative; }
+  @media (max-width:980px){ .approach-list{ grid-template-columns:1fr; gap:28px; } }
+  .approach-list::before{
+    content:''; position:absolute; top:17px; left:0; right:0; height:1px; background:var(--line);
+  }
+  @media (max-width:980px){ .approach-list::before{ display:none; } }
+  .step{ padding-right:20px; position:relative; }
+  .step .step-num{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--paper);
+    background:var(--blue); width:34px; height:34px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; position:relative; z-index:2; margin-bottom:16px;
+  }
+  .step h4{ font-family:'Space Grotesk',sans-serif; font-size:16px; margin-bottom:8px; }
+  .step p{ color:var(--text-soft); font-size:14px; margin:0; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink); color:#EDEBE4; padding:56px 0 32px;
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;
+    border-bottom:1px solid var(--line-dark); padding-bottom:36px; margin-bottom:24px;
+  }
+  footer h2{ font-size:clamp(24px,3.4vw,36px); max-width:520px; }
+  .footer-links{ display:flex; gap:16px; flex-wrap:wrap; }
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7C8592;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span> GUILLAUME PIEN</div>
+    <nav class="links">
+      <a href="#about">Profile</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Data Analytics · Business Intelligence · Automation · AI</div>
+      <h1>I turn operational noise into decisions people <em>actually act on</em>.</h1>
+      <p class="lede">PharmD and data professional, 10+ years in the pharmaceutical industry. Power BI, SQL, Python and AI-powered automation — building tools teams genuinely open every morning, not technically perfect reports nobody reads.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">See the projects ↓</a>
+        <a class="btn btn-ghost" href="mailto:guillaume.pien@outlook.com">guillaume.pien@outlook.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/gpn" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="kpi-card" role="img" aria-label="Dashboard-style summary card: 10+ years of experience, 6 projects showcased, top 5 out of 80 teams, 2 combined areas of expertise">
+      <div class="kpi-card-head">
+        <span>Executive Overview</span>
+        <span class="filter">Filtered by: Career YTD</span>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="num">10+ <span class="delta up">▲ yrs</span></div>
+          <div class="label">PHARMA EXPERIENCE</div>
+          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,20 15,17 30,18 45,10 60,12 75,4 90,6" fill="none" stroke="#7FC49A" stroke-width="2"/></svg>
+        </div>
+        <div class="kpi">
+          <div class="num">6 <span class="delta up">▲ shown</span></div>
+          <div class="label">PROJECTS SHOWCASED</div>
+          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,22 15,20 30,15 45,16 60,9 75,10 90,3" fill="none" stroke="#7FC49A" stroke-width="2"/></svg>
+        </div>
+        <div class="kpi">
+          <div class="num">Top 5<span class="delta flat">/80</span></div>
+          <div class="label">SANOFI COMPETITION · OLYMPICS</div>
+          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,10 15,14 30,8 45,12 60,6 75,9 90,4" fill="none" stroke="#D89238" stroke-width="2"/></svg>
+        </div>
+        <div class="kpi">
+          <div class="num">2 <span class="delta flat">domains</span></div>
+          <div class="label">PHARMD × DATA</div>
+          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,12 15,12 30,11 45,12 60,11 75,12 90,11" fill="none" stroke="#D89238" stroke-width="2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="measure-tag mono">Profile :=<br>Experience[Pharma, 10]<br>+ Experience[Data, Full-Stack]<br>+ Craft[UX]</span>
+    </div>
+    <div>
+      <span class="section-eyebrow">Profile</span>
+      <h2 class="section-title">From the pharmacy counter to the dashboard</h2>
+      <p>I'm a PharmD and data professional with 10+ years of experience in the pharmaceutical industry, turning complex operational data into decisions that actually get made. I work across the full analytics stack: data modeling and SQL, Power BI dashboards, Python pipelines, and AI-powered automation — with a consistent focus on building things that are actually used, not just built.</p>
+      <p>My background combines <strong>10 years of pharmaceutical domain knowledge</strong> with hands-on technical expertise. That combination means I spend less time learning the business context and more time solving the right problems — whether that's a KPI framework for a leadership team, a data quality monitoring system, or an AI-powered automation pipeline.</p>
+      <p>What drives my work is a strong belief that analytics tools are only as good as the experience of using them. I invest in UX — report layout, navigation flow, the right level of detail at the right level of the organisation — because a dashboard that people actually open every morning is worth ten technically perfect reports that nobody reads. Good data products earn their place in someone's workflow; they don't need to be explained.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills-wrap">
+  <div class="wrap">
+    <span class="section-eyebrow">Stack</span>
+    <h2 class="section-title" style="margin-bottom:18px;">Tools &amp; expertise</h2>
+
+    <div class="skills-row">
+      <span class="skill-group-label">BI &amp; Data</span>
+      <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">SQL</span><span class="chip">Snowflake</span><span class="chip">Row-Level Security</span>
+    </div>
+    <div class="skills-row">
+      <span class="skill-group-label">Languages &amp; ML</span>
+      <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">scikit-learn</span><span class="chip">Prophet</span><span class="chip">Statistics</span>
+    </div>
+    <div class="skills-row">
+      <span class="skill-group-label">AI &amp; Automation</span>
+      <span class="chip">GPT-4.1 mini</span><span class="chip">Zapier</span><span class="chip">Airtable</span><span class="chip">Regex</span>
+    </div>
+    <div class="skills-row">
+      <span class="skill-group-label">Craft</span>
+      <span class="chip">Figma</span><span class="chip">Data Storytelling</span><span class="chip">Data Visualization</span><span class="chip">Microsoft Excel</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="projects-head">
+      <span class="section-eyebrow">Projects</span>
+      <h2 class="section-title">Six projects showcased here, one consistent logic: seeing clearly to decide</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- Project 1 -->
+      <article class="tile">
+        <div class="tile-tab">
+          <div class="tab-left"><span class="tile-num">01</span><h3>💊 Cortonis Pharma — Sales Performance Dashboard</h3></div>
+        </div>
+        <div class="tile-body">
+          <img class="shot" src="screenshots/Executive_Overview.png" alt="Executive Overview dashboard preview" loading="lazy" onerror="this.style.display='none'">
+          <div class="tile-tags">
+            <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Figma</span><span class="chip">Data Viz</span>
+          </div>
+          <p>A 5-page Power BI commercial performance dashboard built on a real pharmaceutical sales dataset (Foresight, Poland &amp; Germany, 2017–2020, 254K transactions) — designed to give sales leadership and territory managers a clear, actionable view of what's happening in the field.</p>
+          <div class="stat-row">
+            <div class="stat"><div class="num">254K</div><div class="label">TRANSACTIONS</div></div>
+            <div class="stat"><div class="num">5</div><div class="label">PAGES</div></div>
+            <div class="stat"><div class="num">2</div><div class="label">COUNTRIES</div></div>
+          </div>
+          <p><strong>What makes it technically strong:</strong> dual field parameters on every page (metric × dimension), BCG quadrant scatter with dynamic median lines via <span class="mono">MEDIANX</span>, seasonality index with 95% CI via <span class="mono">STDEVX.P</span>, dual team/global ranking using <span class="mono">ISINSCOPE</span>, <span class="mono">CALCULATETABLE</span> and <span class="mono">ALL()</span>.</p>
+          <a class="tile-link" href="https://github.com/gpn64/Cortonis-Pharma-Sales-Dashboard" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="tile">
+        <div class="tile-tab">
+          <div class="tab-left"><span class="tile-num">02</span><h3>🔬 Cortonis Pharma — Segmentation &amp; Forecast</h3></div>
+        </div>
+        <div class="tile-body">
+          <div class="tile-tags">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">scikit-learn</span><span class="chip">Power BI</span><span class="chip">Kaggle</span>
+          </div>
+          <p>A deliberate extension of the previous project: a Python analytics layer that answers what standard BI reporting alone can't — not just <em>what</em> is happening, but <em>why</em>, <em>who</em>, and <em>what next</em>. Python outputs (segments, scores, forecasts) are fed back into Power BI as clean tables.</p>
+          <details class="modules">
+            <summary>See the 3 analytical modules</summary>
+            <div class="mod">
+              <h4>Module 1 — Customer Segmentation</h4>
+              <p>RFM analysis combined with K-Means clustering to group customers by behavior, profiled by channel and preferred product class.</p>
+              <h4>Module 2 — Territory Underperformance</h4>
+              <p>Separates performance from potential at the territory level: poor coverage or structurally lower market demand? Backed by a performance-vs-potential scatter and a choropleth map.</p>
+              <h4>Module 3 — Sales Forecast</h4>
+              <p>Time-series forecast by therapeutic class via Prophet: monthly point estimates with confidence intervals, for quarterly target-setting.</p>
+            </div>
+          </details>
+          <a class="tile-link" href="https://github.com/gpn64/pharma-sales-analytics" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="tile">
+        <div class="tile-tab">
+          <div class="tab-left"><span class="tile-num">03</span><h3>🏅 True Olympic Powerhouse</h3></div>
+          <span class="badge">Top 5 / 80 teams</span>
+        </div>
+        <div class="tile-body">
+          <div class="tile-tags">
+            <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Storytelling</span><span class="chip">Figma</span>
+          </div>
+          <p>A dashboard exploring 120 years of Olympic history, built for a company-wide analytics competition open to every Sanofi team globally. The IOC doesn't officially rank countries — this dashboard makes that ambiguity the subject, letting users choose their own ranking methodology to discover who the <em>True Olympic Powerhouse</em> really is.</p>
+          <p><strong>What makes it technically strong:</strong> star schema with 40+ DAX measures, 5 ranking methodologies driven by field parameters with no page duplication, composite scoring via rank-based normalization, inline SVG flags.</p>
+          <a class="tile-link" href="https://github.com/gpn64/TOP-Dashboard-PowerBI/tree/main" target="_blank" rel="noopener">View full README &amp; report <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="tile">
+        <div class="tile-tab">
+          <div class="tab-left"><span class="tile-num">04</span><h3>🏥 Healthcare AutoClaims</h3></div>
+        </div>
+        <div class="tile-body">
+          <div class="tile-tags">
+            <span class="chip">Gmail</span><span class="chip">Zapier</span><span class="chip">Airtable</span><span class="chip">GPT-4.1 mini</span><span class="chip">Regex</span>
+          </div>
+          <p>A fully automated pipeline that watches a Gmail inbox for healthcare receipts, extracts structured data from PDF invoices using GPT-4.1 mini, and builds a live reimbursement tracking database — with zero manual data entry on the intake side.</p>
+          <p><strong>Why it's interesting:</strong> the prompt is deliberately constrained to a fixed <span class="mono">key: value</span> format, making downstream regex extraction deterministic and robust. The raw AI output is always preserved — if the prompt needs updating, no need to re-run the Zap.</p>
+          <a class="tile-link" href="https://github.com/gpn64/healthcare-autoclaims" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="tile">
+        <div class="tile-tab">
+          <div class="tab-left"><span class="tile-num">05</span><h3>📈 TFSA TSX Momentum Screener</h3></div>
+        </div>
+        <div class="tile-body">
+          <div class="tile-tags">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">yfinance</span><span class="chip">Quant Finance</span>
+          </div>
+          <p>A Python screener that generates a quarterly TSX rebalancing recommendation for a TFSA: 15 primary positions + 4 backups, all in CAD, combining momentum signals with fundamental quality filters.</p>
+          <div class="stat-row">
+            <div class="stat"><div class="num">15+4</div><div class="label">POSITIONS · BACKUPS</div></div>
+            <div class="stat"><div class="num">90d×0.7</div><div class="label">+ 30d×0.3 MOMENTUM</div></div>
+          </div>
+          <p><strong>Design choices:</strong> the fundamental gate runs before momentum to avoid selecting names accelerating into deteriorating financials; TSX-only scope eliminates currency risk and ensures full TFSA eligibility; a historical simulation mode reconstructs what the screener would have recommended on any past date.</p>
+          <a class="tile-link" href="https://github.com/gpn64/TFSA_Screener-V1" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="tile">
+        <div class="tile-tab">
+          <div class="tab-left"><span class="tile-num">06</span><h3>📊 Data Quality Monitoring at Scale</h3></div>
+        </div>
+        <div class="tile-body">
+          <div class="tile-tags">
+            <span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Snowflake</span><span class="chip">Row-Level Security</span>
+          </div>
+          <p>A monitoring dashboard built to control data quality inside a cloud-based SaaS platform used by a global organisation across dozens of markets and hundreds of users. Tracks completeness, consistency, and timeliness of key records, with row-level security so each market sees only its own data.</p>
+          <div class="stat-row">
+            <div class="stat"><div class="num">99%+</div><div class="label">COMPLIANCE ACHIEVED</div></div>
+          </div>
+          <p><strong>Impact:</strong> contributed to achieving 99%+ compliance for priority data categories — a measurable improvement driven by dashboard findings, not manual audits.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <span class="section-eyebrow">Approach</span>
+    <h2 class="section-title">From first conversation to production</h2>
+    <p style="color:var(--text-soft); max-width:640px; margin-top:14px;">Beyond the technical work, I operate as a full-cycle analytics project owner — whether the project is a Power BI dashboard, a process automation, or a data pipeline.</p>
+
+    <div class="approach-list">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Scoping</h4>
+        <p>Translating ambiguous business problems into precise analytics requirements; facilitating workshops with subject matter experts to surface what's actually needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Design</h4>
+        <p>Data modeling, report architecture, UX decisions, iterative builds with regular stakeholder checkpoints.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Stakeholders</h4>
+        <p>Managing expectations across technical and non-technical audiences; communicating progress and trade-offs without over-meeting.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>UAT &amp; QA</h4>
+        <p>Structuring user acceptance testing with real users, triaging feedback, distinguishing scope from defect before go-live.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h4>Adoption</h4>
+        <p>Managing rollout, training, and documentation; tracking post-launch adoption to close the loop on whether the solution is actually being used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <h2>A dashboard nobody opens is worth nothing. Let's talk about the one your team will actually use.</h2>
+      <div class="footer-links">
+        <a class="btn btn-primary" href="mailto:guillaume.pien@outlook.com">Send an email</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/gpn" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Guillaume Pien — Data &amp; Analytics</span>
+      <span>guillaume.pien@outlook.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
