@@ -177,6 +177,25 @@
     background:var(--blue-soft); display:inline-block; padding:10px 14px; border-radius:8px;
     line-height:1.5; white-space:pre-wrap; word-break:break-word;
   }
+  .about-portrait{
+    width:100%; max-width:220px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 20px 16px;
+    margin-bottom:20px;
+  }
+  .about-portrait img{
+    width:100%; display:block;
+  }
+  .about-portrait .cap{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-soft);
+    margin-top:12px; padding-top:12px; border-top:1px dashed var(--line);
+    display:flex; align-items:center; gap:6px;
+  }
+  .about-portrait .cap .dot{
+    width:6px; height:6px; border-radius:50%; background:var(--amber); display:inline-block; flex:none;
+  }
   .section-eyebrow{
     font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
     color:var(--blue); margin-bottom:14px; display:block;
@@ -359,6 +378,10 @@
 <section id="about">
   <div class="wrap about-grid">
     <div>
+      <div class="about-portrait">
+        <img src="images/avatar.png" alt="Guillaume Pien — portrait illustré" loading="lazy">
+        <div class="cap"><span class="dot"></span>guillaume.pien</div>
+      </div>
       <span class="measure-tag mono">Profile :=<br>Experience[Pharma, 10]<br>+ Experience[Data, Full-Stack]<br>+ Craft[UX]</span>
     </div>
     <div>
