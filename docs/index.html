@@ -273,12 +273,12 @@
     border:1px solid var(--line);
     border-radius:var(--radius);
     overflow:hidden;
-    flex:0 0 340px; width:340px; height:600px;
+    flex:0 0 460px; width:460px; height:660px;
     display:flex; flex-direction:column;
     scroll-snap-align:start;
     transition:box-shadow .25s ease, transform .25s ease;
   }
-  @media (max-width:480px){ .tile{ flex-basis:82vw; width:82vw; } }
+  @media (max-width:480px){ .tile{ flex-basis:82vw; width:82vw; height:600px; } }
   .tile:hover{ box-shadow:0 24px 48px -28px rgba(15,27,43,0.28); transform:translateY(-3px); }
 
   .tile-tab{
