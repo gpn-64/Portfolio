@@ -206,6 +206,33 @@
   .about-grid p:last-child{ margin-bottom:0; }
   .about-grid strong{ color:var(--text); font-weight:600; }
 
+  /* ---------- CAREER ---------- */
+  .career-list{
+    margin-top:44px; position:relative; padding-left:28px;
+    border-left:2px solid var(--line);
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .career-item{ position:relative; }
+  .career-item::before{
+    content:''; position:absolute; left:-35px; top:4px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--blue); border:3px solid var(--paper);
+  }
+  .career-item.current::before{ background:#4FBE95; }
+  .career-role{
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  }
+  .career-current-badge{
+    font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.05em;
+    color:#2F8F63; background:#DFF3E9; padding:2px 9px; border-radius:100px; font-weight:600;
+  }
+  .career-meta{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-soft);
+    margin-top:3px; margin-bottom:12px;
+  }
+  .career-item p{ margin:0; color:var(--text-soft); font-size:14.5px; line-height:1.65; }
+
   /* ---------- SKILLS ---------- */
   .skills-wrap{ padding:40px 0; }
   .skills-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
@@ -348,6 +375,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#approach">Approach</a>
+      <a href="#career">Career</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -418,6 +446,7 @@
     </div>
   </div>
 </section>
+
 
 <section id="skills" class="skills-wrap">
   <div class="wrap">
@@ -620,6 +649,35 @@
         <p>Keeping dashboards accurate as data sources and business needs evolve, and retiring reports that no longer earn their place.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="wrap">
+    <span class="section-eyebrow">Career</span>
+    <h2 class="section-title">10+ years, one thread: turning data into decisions</h2>
+
+    <div class="career-list">
+      <div class="career-item current">
+        <div class="career-role">Senior Decision Science Analyst (BI Developer) <span class="career-current-badge">Current</span></div>
+        <div class="career-meta">Sanofi · Jan 2024 – Present · Toronto, ON (Remote)</div>
+      </div>
+
+      <div class="career-item">
+        <div class="career-role">Principal Business Analyst (BI Developer)</div>
+        <div class="career-meta">Sanofi · Jul 2020 – Dec 2023 · Toronto, ON (Remote)</div>
+      </div>
+
+      <div class="career-item">
+        <div class="career-role">Regulatory CMC Associate</div>
+        <div class="career-meta">Sanofi · Jun 2018 – Jun 2020 · Toronto, ON</div>
+      </div>
+
+      <div class="career-item">
+        <div class="career-role">Production &amp; QC Manager</div>
+        <div class="career-meta">Sanofi &amp; LFB Biomédicaments · May 2015 – Jun 2018 · Paris Area, France</div>
+      </div>
+      </div>
   </div>
 </section>
 
