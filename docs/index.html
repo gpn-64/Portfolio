@@ -311,8 +311,11 @@
   .stat .num{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; color:var(--blue-ink); }
   .stat .label{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-soft); margin-top:2px; }
 
+  .tile-footer{
+    flex:none; padding:16px 24px; border-top:1px solid var(--line); background:var(--panel);
+  }
   .tile-link{
-    display:inline-flex; align-items:center; gap:8px; margin-top:6px;
+    display:inline-flex; align-items:center; gap:8px;
     font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--blue-ink); text-decoration:none;
     border-bottom:1px solid transparent;
   }
@@ -535,6 +538,8 @@
             <div class="stat"><div class="num">2</div><div class="label">COUNTRIES</div></div>
           </div>
           <p><strong>What makes it technically strong:</strong> dual field parameters on every page (metric × dimension), BCG quadrant scatter with dynamic median lines via <span class="mono">MEDIANX</span>, seasonality index with 95% CI via <span class="mono">STDEVX.P</span>, dual team/global ranking using <span class="mono">ISINSCOPE</span>, <span class="mono">CALCULATETABLE</span> and <span class="mono">ALL()</span>.</p>
+        </div>
+        <div class="tile-footer">
           <a class="tile-link" href="https://github.com/gpn64/Cortonis-Pharma-Sales-Dashboard" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
         </div>
       </article>
@@ -561,6 +566,8 @@
               <p>Time-series forecast by therapeutic class via Prophet: monthly point estimates with confidence intervals, for quarterly target-setting.</p>
             </div>
           </details>
+        </div>
+        <div class="tile-footer">
           <a class="tile-link" href="https://github.com/gpn64/pharma-sales-analytics" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
         </div>
       </article>
@@ -578,6 +585,8 @@
           </div>
           <p>A dashboard exploring 120 years of Olympic history, built for a company-wide analytics competition open to every Sanofi team globally. The IOC doesn't officially rank countries. This dashboard makes that ambiguity the subject, letting users choose their own ranking methodology to discover who the <em>True Olympic Powerhouse</em> really is.</p>
           <p><strong>What makes it technically strong:</strong> star schema with 40+ DAX measures, 5 ranking methodologies driven by field parameters with no page duplication, composite scoring via rank-based normalization, inline SVG flags.</p>
+        </div>
+        <div class="tile-footer">
           <a class="tile-link" href="https://github.com/gpn64/TOP-Dashboard-PowerBI/tree/main" target="_blank" rel="noopener">View full README &amp; report <span class="arrow">→</span></a>
         </div>
       </article>
@@ -594,6 +603,8 @@
           </div>
           <p>A fully automated pipeline that watches a Gmail inbox for healthcare receipts, extracts structured data from PDF invoices using GPT-4.1 mini, and builds a live reimbursement tracking database, with zero manual data entry on the intake side.</p>
           <p><strong>Why it's interesting:</strong> the prompt is deliberately constrained to a fixed <span class="mono">key: value</span> format, making downstream regex extraction deterministic and robust. The raw AI output is always preserved, so if the prompt needs updating, there's no need to re-run the Zap.</p>
+        </div>
+        <div class="tile-footer">
           <a class="tile-link" href="https://github.com/gpn64/healthcare-autoclaims" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
         </div>
       </article>
@@ -614,6 +625,8 @@
             <div class="stat"><div class="num">90d×0.7</div><div class="label">+ 30d×0.3 MOMENTUM</div></div>
           </div>
           <p><strong>Design choices:</strong> the fundamental gate runs before momentum to avoid selecting names accelerating into deteriorating financials; TSX-only scope eliminates currency risk and ensures full TFSA eligibility; a historical simulation mode reconstructs what the screener would have recommended on any past date.</p>
+        </div>
+        <div class="tile-footer">
           <a class="tile-link" href="https://github.com/gpn64/TFSA_Screener-V1" target="_blank" rel="noopener">View full project README <span class="arrow">→</span></a>
         </div>
       </article>
