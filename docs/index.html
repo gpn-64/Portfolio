@@ -10,18 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0F1B2B;
-    --ink-2:#16273D;
-    --paper:#F5F3ED;
+    --ink:#10151F;
+    --ink-2:#171E2C;
+    --paper:#F6F7FA;
     --panel:#FFFFFF;
-    --blue:#2B6E8F;
-    --blue-soft:#DCE9EE;
-    --amber:#D89238;
-    --teal:#4B8C82;
-    --text:#151C24;
-    --text-soft:#57626E;
-    --line:rgba(15,27,43,0.12);
-    --line-dark:rgba(245,243,237,0.16);
+    --blue:#2F6FED;
+    --blue-soft:#E1EAFD;
+    --amber:#5B8DEF;
+    --teal:#2FA7C7;
+    --text:#12161F;
+    --text-soft:#4E5768;
+    --line:rgba(16,21,31,0.10);
+    --line-dark:rgba(246,247,250,0.18);
     --radius:14px;
     --maxw:1180px;
   }
@@ -55,7 +55,7 @@
   /* ---------- NAV ---------- */
   header.nav{
     position:sticky; top:0; z-index:50;
-    background:rgba(245,243,237,0.86);
+    background:rgba(246,247,250,0.86);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -88,7 +88,7 @@
   /* ---------- HERO ---------- */
   .hero{
     background:var(--ink);
-    color:#F2F1EC;
+    color:#EBF1FD;
     padding:88px 0 96px;
     position:relative;
     overflow:hidden;
@@ -111,7 +111,7 @@
     font-size:clamp(32px,4.2vw,52px);
     line-height:1.12;
     font-weight:600;
-    color:#F7F6F1;
+    color:#F5F7FC;
   }
   .hero h1 em{
     font-style:normal; color:var(--amber);
@@ -130,9 +130,9 @@
   }
   .btn:hover{ transform:translateY(-2px); }
   .btn-primary{ background:var(--amber); color:var(--ink); font-weight:600; }
-  .btn-primary:hover{ background:#E8A64A; }
-  .btn-ghost{ border-color:var(--line-dark); color:#EDEBE4; }
-  .btn-ghost:hover{ border-color:#F2F1EC; }
+  .btn-primary:hover{ background:#2A5FDB; }
+  .btn-ghost{ border-color:var(--line-dark); color:#E6EDFB; }
+  .btn-ghost:hover{ border-color:#EBF1FD; }
 
   /* Signature element: dashboard tile */
   .kpi-card{
@@ -154,7 +154,7 @@
   .kpi-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   .kpi{ }
   .kpi .num{
-    font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; color:#F7F6F1;
+    font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:600; color:#F5F7FC;
     display:flex; align-items:baseline; gap:6px;
   }
   .kpi .delta{
@@ -206,7 +206,7 @@
   .about-grid strong{ color:var(--text); font-weight:600; }
 
   /* ---------- SKILLS ---------- */
-  .skills-wrap{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:40px 0; }
+  .skills-wrap{ padding:40px 0; }
   .skills-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
   .skills-row + .skills-row{ margin-top:22px; }
   .skill-group-label{
@@ -259,7 +259,7 @@
 
   .tile-tab{
     display:flex; align-items:center; justify-content:space-between; gap:16px;
-    padding:16px 24px; background:var(--ink); color:#F2F1EC;
+    padding:16px 24px; background:var(--ink); color:#EBF1FD;
     flex-wrap:wrap;
   }
   .tile-tab .tab-left{ display:flex; align-items:center; gap:12px; }
@@ -267,7 +267,7 @@
     font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber); border:1px solid var(--line-dark);
     padding:3px 8px; border-radius:6px;
   }
-  .tile-tab h3{ font-size:19px; color:#F7F6F1; font-weight:600; }
+  .tile-tab h3{ font-size:19px; color:#F5F7FC; font-weight:600; }
   .tile-tab .badge{
     font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
     background:var(--amber); padding:4px 10px; border-radius:100px; font-weight:600; white-space:nowrap;
@@ -342,11 +342,11 @@
     font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.05em;
     padding:2px 8px; border-radius:100px; background:var(--blue-soft); color:var(--blue); font-weight:600;
   }
-  .cert-status.progress{ background:#F5E6CE; color:var(--amber); }
+  .cert-status.progress{ background:#E6EEFB; color:var(--amber); }
 
   /* ---------- FOOTER ---------- */
   footer{
-    background:var(--ink); color:#EDEBE4; padding:56px 0 32px;
+    background:var(--ink); color:#E6EDFB; padding:56px 0 32px;
   }
   .footer-top{
     display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;
@@ -408,12 +408,12 @@
         <div class="kpi">
           <div class="num">Top 5<span class="delta flat">/80</span></div>
           <div class="label">SANOFI COMPETITION · OLYMPICS</div>
-          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,10 15,14 30,8 45,12 60,6 75,9 90,4" fill="none" stroke="#D89238" stroke-width="2"/></svg>
+          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,10 15,14 30,8 45,12 60,6 75,9 90,4" fill="none" stroke="#5B8DEF" stroke-width="2"/></svg>
         </div>
         <div class="kpi">
           <div class="num">2 <span class="delta flat">domains</span></div>
           <div class="label">PHARMD × DATA</div>
-          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,12 15,12 30,11 45,12 60,11 75,12 90,11" fill="none" stroke="#D89238" stroke-width="2"/></svg>
+          <svg class="spark" width="90" height="24" viewBox="0 0 90 24"><polyline points="0,12 15,12 30,11 45,12 60,11 75,12 90,11" fill="none" stroke="#5B8DEF" stroke-width="2"/></svg>
         </div>
       </div>
     </div>
