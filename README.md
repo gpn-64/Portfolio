@@ -93,18 +93,19 @@ A 5-page Power BI commercial performance dashboard built on a real pharmaceutica
 
 A Python-based analytics layer built on top of the same pharma sales dataset - going beyond what standard BI reporting can answer. Three analytical modules, each producing outputs that feed back into Power BI for decision-making.
 
-**This project is a deliberate extension of Project 1** - it answers the questions that arise once you have a solid reporting foundation in place: not just *what* is happening, but *why*, *who*, and *what next*.
+This project is a deliberate extension of Project 1 - it answers the questions that arise once you have a solid reporting foundation in place: not just what is happening, but why, who, and what next.
 
 **Module 1: Customer Segmentation**
 RFM analysis (Recency, Frequency, Monetary) combined with K-Means clustering to group customers into behaviorally distinct segments. Each segment is profiled by channel, sub-channel, and preferred product class - producing actionable inputs for differentiated commercial strategies (key account management, frequency of visits, product focus by customer type).
 
 **Module 2: Territory Underperformance Analysis**
-Separates *performance* from *potential* at the territory level identifying whether a city underperforms because it is poorly covered or because market demand is structurally lower. Outputs a performance vs. potential scatter plot and a choropleth map that makes underserved opportunities immediately visible.
+Tests whether territory-level performance is explained by market potential (population) or reflects a commercial coverage gap. On this dataset, population turned out to be a weak predictor (R² ≈ 0.02) - a finding in itself, and a reminder that the performance/potential split should guide prioritization, not stand alone as proof of under-coverage. Outputs a performance vs. potential scatter plot and a choropleth map to surface the clearest candidates for field validation.
 
 **Module 3: Sales Forecast**
-Time-series forecast by therapeutic class using Prophet: monthly point estimates with confidence intervals. Designed to support quarterly target-setting and resource allocation planning.
+Time-series forecast by therapeutic class using Prophet, validated against naive benchmarks (seasonal naive, historical average) through backtesting. The validation itself was the key output: Prophet did not outperform a simple historical average on this dataset, and auto-ARIMA independently converged to the same conclusion - no exploitable trend or seasonality at this level of aggregation. Recommendation: use historical mean ± empirical variance for quarterly target-setting rather than the point forecast, and treat this as a template for series that do carry real signal.
 
-**Python → Power BI handoff:** Segment labels, territory scores, and forecast outputs are exported from Python notebooks as clean tables and loaded into Power BI keeping analytical logic in code and the decision layer in the dashboard.
+**Python → Power BI handoff**
+Segment labels, territory scores, and forecast outputs are exported from Python notebooks as clean tables and loaded into Power BI - keeping analytical logic in code and the decision layer in the dashboard.
 
 📁 [View full project README](https://github.com/gpn64/pharma-sales-analytics)
 
