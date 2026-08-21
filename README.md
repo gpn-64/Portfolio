@@ -185,22 +185,4 @@ A Python screener that generates a quarterly TSX rebalancing recommendation for 
 
 ---
 
-## Project Delivery
-
-Beyond the technical work, I operate as a full-cycle analytics project owner. Whether the project is a Power BI dashboard, a process automation, or a data pipeline, I drive it from first conversation to production:
-
-**Requirements & scoping**: translating ambiguous business problems into precise, deliverable analytics requirements; facilitating workshops with subject matter experts to surface what's actually needed (vs. what's initially asked for); writing functional specs that development and stakeholders can align on.
-
-**Design & development**: data modeling, report architecture, UX decisions, and iterative builds with regular stakeholder checkpoints. I default to building for the end user, not for the analyst.
-
-**Stakeholder management**: managing expectations across technical and non-technical audiences, from data engineers to C-suite sponsors; communicating progress, trade-offs, and delays clearly; keeping cross-functional teams aligned without over-meeting.
-
-**UAT & quality assurance**: structuring user acceptance testing with real users, capturing and triaging feedback, distinguishing scope from defect, and ensuring edge cases are covered before go-live.
-
-**Deployment & adoption**: managing rollout, training, and documentation; setting up governance for ongoing data quality and report maintenance; tracking post-launch adoption to close the loop on whether the solution is actually being used.
-
-This end-to-end ownership - not just the code, but the process around it - is what turns analytics deliverables into decisions.
-
----
-
 📬 **guillaume.pien@outlook.com** · [LinkedIn](https://www.linkedin.com/in/gpn)
