@@ -185,28 +185,6 @@ A Python screener that generates a quarterly TSX rebalancing recommendation for 
 
 ---
 
-### 6. 📊 Dashboard - Data Quality Monitoring at Scale
-
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
-![RLS](https://img.shields.io/badge/Row--Level%20Security-E8423F?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-
-A monitoring dashboard built to control data quality inside a cloud-based SaaS platform used by a global organisation across dozens of markets and hundreds of users.
-
-**Context:** In large, distributed organisations, data entered by many teams across many markets quickly becomes inconsistent: missing fields, outdated records, conflicting values. Without visibility into data health, reporting becomes unreliable and operational decisions are made on faulty foundations. This dashboard was built to surface those gaps and drive remediation at scale.
-
-**What it does:**
-- Tracks completeness, consistency, and timeliness of key records across markets and business units
-- Flags outliers and missing mandatory fields at multiple levels of granularity from executive summary to individual record drill-through
-- Row-level security ensures local teams see only their own data while global teams retain full visibility
-- Feeds directly into targeted remediation campaigns, with measurable progress tracked over time
-
-**Impact:** Contributed to achieving 99%+ compliance for priority data categories: a measurable improvement driven by dashboard findings, not manual audits.
-
----
-
 ## Project Delivery
 
 Beyond the technical work, I operate as a full-cycle analytics project owner. Whether the project is a Power BI dashboard, a process automation, or a data pipeline, I drive it from first conversation to production:
