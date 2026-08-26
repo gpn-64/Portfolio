@@ -44,6 +44,7 @@ and version identifiers are dates (YYYY-MM-DD) rather than semantic version numb
 - Yellow Belt Lean Six Sigma and Project Management Level D (IPMA) certifications.
 - pandas tag from the "Post-LOE Generic Access & Pricing - Canada" project.
 - Obsolete root-level `screenshots/` folder (duplicate of `docs/screenshots/`).
+- `docs/Guillaume_Pien_Resume.pdf` (superseded by the OneDrive-hosted résumé link).
 
 ### Fixed
 - Incorrect date (2025 → 2024) in the "Cortonis Pharma: sales performance" project description.
