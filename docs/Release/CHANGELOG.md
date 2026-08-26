@@ -15,15 +15,16 @@ Toutes les mises à jour notables du site sont consignées ici, classées par da
 - "Pharma and delivery" renommé "Pharma domain" avec une nouvelle liste : Regulatory Affairs & Submissions, Quality Management, Manufacturing & QC Operations, Supply Chain, Market Access & Pricing, ATC/DIN Classification & Market Data Analysis.
 
 ### Projets
-- **Cortonis Pharma: sales performance** — date corrigée (2025 → 2024), ajout des tags SQL et Data warehousing.
-- **Post-LOE Generic Access & Pricing - Canada** — retrait du tag pandas, ajout des tags SQL et Data warehousing.
-- **Cortonis Pharma: segmentation and forecast** — lien du repo corrigé (pointait vers une URL inexistante).
-- **TFSA TSX momentum screener** — lien du repo corrigé (pointait vers une URL inexistante).
-- **True Olympic Powerhouse** — ajout des tags SQL et Data warehousing.
+- Cortonis Pharma: sales performance : date corrigée (2025 → 2024), ajout des tags SQL et Data warehousing.
+- Post-LOE Generic Access & Pricing - Canada : retrait du tag pandas, ajout des tags SQL et Data warehousing.
+- Cortonis Pharma: segmentation and forecast : lien du repo corrigé (pointait vers une URL inexistante).
+- TFSA TSX momentum screener : lien du repo corrigé (pointait vers une URL inexistante).
+- True Olympic Powerhouse : ajout des tags SQL et Data warehousing.
 
 ### Autres
 - Bouton "Résumé (PDF)" (hero et footer) repointé vers le fichier CV sur OneDrive, ouverture en nouvel onglet.
 - Bloc "In short" (10 yrs / PharmD / PL-300...) dupliqué pour s'afficher entre le H1 et le paragraphe d'intro en version mobile uniquement ; version desktop inchangée.
+- Suppression du résumé stocké sur github.
 
 ### Ménage du repo
 - Suppression du dossier `screenshots/` à la racine (doublon obsolète de `docs/screenshots/`, non référencé par le site).
