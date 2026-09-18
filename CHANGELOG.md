@@ -8,7 +8,7 @@ and version identifiers are dates (YYYY-MM-DD) rather than semantic version numb
 ## [Unreleased]
 
 ### Added
--
+- "Strategic Business Analytics" certification from ESSEC to the Certifications section.
 
 ### Changed
 -
