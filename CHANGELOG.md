@@ -11,13 +11,13 @@ and version identifiers are dates (YYYY-MM-DD) rather than semantic version numb
 - "Strategic Business Analytics" certification from ESSEC to the Certifications section.
 
 ### Changed
--
+- Project 04: "Health Canada Regulatory Approval Predictor" (Python, XGBoost, SHAP, Power BI) replaces "TFSA TSX momentum screener". Projects 04-06 renumbered accordingly.
 
 ### Deprecated
 -
 
 ### Removed
--
+- "TFSA TSX momentum screener" project card and its screenshot (docs/screenshots/tfsa-tsx-momentum-screener.png).
 
 ### Fixed
 -
