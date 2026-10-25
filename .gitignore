@@ -9,3 +9,6 @@ Thumbs.db
 
 # Local scratch
 *.tmp
+
+# graphify output (knowledge graph, local only)
+graphify-out/
